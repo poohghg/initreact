@@ -1,35 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { name } from './common';
+import ReactQuery from './components/ReactQuery';
+import InfiniteQueries from './components/InfiniteQueries';
 
-const dd = () => {
-  console('sda');
-};
-
-const test = (ddaa) => {
-  console.log(dd);
-};
-
-const initState = {
-  a: 1,
-  b: {
-    abc: 1,
-    bb: 2,
-  },
-};
+const queryClinet = new QueryClient();
 
 function App() {
-  const [state, setstate] = useState(initState);
-  const values = {
-    b: {
-      ...initState.b,
-      abc: 3,
-    },
-  };
-  const setDats = () => setstate((prev) => ({ ...prev, ...values }));
-  useEffect(() => setDats(), []);
-  console.log('state', state);
-
-  return <div className="App">33333</div>;
+  return (
+    <QueryClientProvider client={queryClinet}>
+      <InfiniteQueries />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
