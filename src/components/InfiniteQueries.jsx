@@ -25,7 +25,7 @@ const InfiniteQueries = () => {
     status,
   } = useInfiniteQuery('todos', fetchProjects, {
     // eslint-disable-next-line no-shadow
-    getNextPageParam: () => page,
+    getNextPageParam: (page) => page,
   });
 
   const [ref, inView] = useInView();
