@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { name } from './common';
 import ReactQuery from './components/ReactQuery';
 import InfiniteQueries from './components/InfiniteQueries';
+import Reactmobilestylepicker from './components/Reactmobilestylepicker';
+import './styles/App.css';
 
-const queryClinet = new QueryClient();
-
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      cacheTime: 120000,
+    },
+  },
+});
 function App() {
   return (
-    <QueryClientProvider client={queryClinet}>
-      <InfiniteQueries />
+    <QueryClientProvider client={queryClient}>
+      <Reactmobilestylepicker />
     </QueryClientProvider>
   );
 }
