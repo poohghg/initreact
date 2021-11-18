@@ -6,13 +6,13 @@ const Reactmobilestylepicker = () => {
   const test = '';
 
   const pickerStyle = {
-    height: '15vh',
+    height: '18vh',
   };
 
   const indicatorStyle = {
     border: '1px solid red',
-    width: '15vw',
-    height: '15vw',
+    width: '18vw',
+    height: '18vw',
     borderRadius: '50%',
   };
   return (
@@ -21,6 +21,8 @@ const Reactmobilestylepicker = () => {
       size={3}
       style={pickerStyle}
       indicatorStyle={indicatorStyle}
+      itemMargin={25}
+      itemSize={100}
     >
       <Picker.Item value={0}>zero</Picker.Item>
       <Picker.Item value={1}>one</Picker.Item>
